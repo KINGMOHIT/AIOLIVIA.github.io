@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+  }
+  body{
+    width: 100%;
+    background: #222;
+    min-height: 100vh;
+    font-family: monospace;
+    --time: 10s;
+  }
+  .flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .c{
+    flex-flow: column;
+  }
+
+  .bod .cir.cr2{
+    left: 280px;
+  }
+  .bod{
+    position: absolute;
+  }
+
+  .circle.c2{
+    animation: rot var(--time) linear infinite reverse calc(var(--time)/-2);
+  }
+  @keyframes rot {
+    100%{
+      transform: rotate(-360deg);
+    }    
+  }
+
+  .circle div{
+    position: absolute;
+    transform: rotate(calc(var(--i)*13deg)) translateX(85px) ;
+    color: #00ff70;
+    text-shadow: 0 0 40px #00ff70,0 0 20px #00ff70,0 0 100px #00ff70;
+    filter: hue-rotate(calc(var(--i)*30deg));
+    font-weight: bold;
+    display: none;
+  }
+
+  .circle div span{
+    display: block;
+    animation: rots var(--time) linear infinite;
+  }
+  .circle.c2 div span{
+    display: block;
+    animation: rots var(--time) linear reverse infinite calc(var(--time)/-2);
+  }
+
+  @keyframes rots {
+    100%{
+      transform: rotate(360deg);
+    }    
+  }
+  .m2{
+    left: 280px;
+  }
